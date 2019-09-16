@@ -4,7 +4,7 @@ export PATH=$HOME/.gloo/bin:$PATH
 
 
 
-glooctl install knative
+glooctl install knative --install-eventing
 
 
 kubectl apply --filename config-domain.yaml
