@@ -1,0 +1,25 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: simple
+  namespace: default
+spec:
+  template:
+    metadata:
+      name: simple-v2
+    spec:
+      containers:
+        - image: docker.io/mkarakas/simple-rest
+          env:
+            - name: VERSION
+              value: "v2"
+  traffic:
+  - tag: current
+    revisionName: simple-v1
+    percent: 50
+  - tag: candidate
+    revisionName: simple-v2
+    percent: 50
+  - tag: latest
+    latestRevision: true
+    percent: 0
