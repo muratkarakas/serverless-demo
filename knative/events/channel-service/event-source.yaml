@@ -1,0 +1,11 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: CronJobSource
+metadata:
+  name: simple-event-generator-job
+spec:
+  schedule: "* * * * *"
+  data: '{"message": "Message from cronjob"}'
+  sink:
+    apiVersion: eventing.knative.dev/v1alpha1
+    kind: Channel
+    name: simple-event-channel
