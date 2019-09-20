@@ -17,6 +17,9 @@ kubectl apply --filename service-v1.yaml
 
 kubectl apply --filename service-v2.yaml
 
+kubectl create ns knative
+
+kubectl label namespace kn knative-eventing-injection=enabled
 
 
 /etc/hosts

@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EventGenerator",
+            "request": "launch",
+            "mainClass": "com.eteration.demo.cloud.event.EventGenerator",
+            "projectName": "cloud-event-generator"
+        }
+    ]
+}
